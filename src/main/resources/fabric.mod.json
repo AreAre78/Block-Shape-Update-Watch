@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "blockshapeupdatewatch",
+	"version": "${version}",
+	"name": "Block Shape Update Watch",
+	"description": "Monitor block shape updates.",
+	"authors": [
+		"Pitagoraser"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/blockshapeupdatewatch/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.pitagoraser.blockshapeupdatewatch.BlockShapeUpdateWatch"
+		],
+		"client": [
+			"net.pitagoraser.blockshapeupdatewatch.BlockShapeUpdateWatchClient"
+		]
+	},
+	"mixins": [
+		"blockshapeupdatewatch.mixins.json",
+		{
+			"config": "blockshapeupdatewatch.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
